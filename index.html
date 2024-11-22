@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expression régulière</title>
+</head>
+<body>
+
+    <script>
+        const strInput = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil minus ";
+        const strInput2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil minus ";
+        const strInput3 = "0123456789";
+
+        const regexStart = /^Lorem/;
+        const regexPhone = /tel : \d{10}/;
+
+        // tester  s'il y a un O 
+        const regexO = /[oO]/;
+        const regexX = /[xX]/;
+
+        console.log(regexO().test(strInput));
+        console.log(regexX().test(strInput));
+
+        console.log(regexStart.test(strInput));
+        console.log(regexStart.test(strInput2));
+
+    </script>
+</body>
+</html>

@@ -6,24 +6,36 @@
     <title>expression régulière</title>
 </head>
 <body>
-
+    <h1>regex</h1>
     <script>
         const strInput = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil minus ";
         const strInput2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil minus ";
         const strInput3 = "0123456789";
+        const strEmail = "exemple@mail.com";
+        const strEmail2 = "invalid-email.com";
 
         const regexStart = /^Lorem/;
         const regexPhone = /tel : \d{10}/;
 
         // tester  s'il y a un O 
-        const regexO = /[oO]/;
+       /* const regexO = /[oO]/;
         const regexX = /[xX]/;
 
         console.log(regexO().test(strInput));
-        console.log(regexX().test(strInput));
+        console.log(regexX().test(strInput));*/
 
         console.log(regexStart.test(strInput));
         console.log(regexStart.test(strInput2));
+
+        console.log(validateEmail(strEmail)); // true
+        console.log(validateEmail(strEmail2)); // false
+        // exos
+
+        // exo 3 code postale 
+        const regexPostale = /^[0-9]{5}$/;
+
+        // exo 4 date
+        const regexDate = /^[0-9]{6}$/;
 
     </script>
 </body>

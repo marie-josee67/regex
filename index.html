@@ -37,6 +37,58 @@
         // exo 4 date
         const regexDate = /^[0-9]{6}$/;
 
+
+        // corection du formateur
+        //REGEX 1 : Vérifier s une chaine de caractères est une adresse valide
+
+        const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,6}$/;
+        const validateEmail = (email) => emailRegex.test(email);
+
+        console.log(validateEmail("exemple@mail.com")); // true
+        console.log(validateEmail("invalid-email.com")); // false
+
+
+        //REGEX 2 : Vérifier qu'un numéro de téléphone est au format français (10 chiffres, optionnellement avec un +33 au début)
+
+        const phoneRegex = /^(\+33|0)[1-9](\d{2}){4}$/;
+        const validatePhone = (phone) => phoneRegex.test(phone);
+
+        console.log(validatePhone("+33612345678")); // true
+        console.log(validatePhone("0612345678")); // true
+        console.log(validatePhone("1234567890")); // false
+
+        //REGEX 3 : Vérifier si une chaîne de caractères est un code postal français (5 chiffres)
+
+        const postalCodeRegex = /^\d{5}$/;
+        const validatePostalCode = (postalCode) => postalCodeRegex.test(postalCode);
+
+        console.log(validatePostalCode("75001")); // true
+        console.log(validatePostalCode("A2345")); // false
+
+
+        //REGEX 4 : Vérifier si une date est au format français JJ/MM/AAAA. On ne vérifiera pas si la date existe ou non, uniquement son format
+        const dateRegex = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+        const validateDate = (date) => dateRegex.test(date);
+
+        console.log(validateDate("12/11/2024")); // true
+        console.log(validateDate("31/13/2024")); // false
+
+        //REGEX 5 : Extraire tous les hashtags d'une chaîne de caractères. (utiliser la fonction « match »)
+        const hashtagRegex = /#\w+/g;
+        const findHashtags = (text) => text.match(hashtagRegex) || [];
+
+        console.log(findHashtags("Aujourd'hui est #fantastique avec #JavaScript et #regex!")); // ['#fantastique', '#JavaScript', '#regex']
+
+
+        //REGEX 6 : Simplifier une chaîne en remplaçant tous les espaces multiples par un seul. (utiliser la fonction « replace »)
+        const cleanSpaces = (text) => text.replace(/\s+/g, ' ');
+
+        console.log(cleanSpaces("Texte    avec   des   espaces   multiples.")); // "Texte avec des espaces multiples."
+
+        // exo7 perso pas encore la correction
+        //REGEX 7 : Extraire toutes les adresses e-mail présentes dans une chaîne de caractères. (utiliser la fonction « match »)
+        console.log(extractEmails("Contactez-nous à contact@exemple.com ou info@site.com")); // ['contact@exemple.com', 'info@site.com']
+
     </script>
 </body>
 </html>

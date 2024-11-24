@@ -93,6 +93,13 @@
         const extractEmails = (text) => text.match(extratRegex) || [];
         console.log(extractEmails("Contactez-nous à contact@exemple.com ou info@site.com")); // ['contact@exemple.com', 'info@site.com']
 
+        // solution chatGPT
+        function extractEmail(inputString) {
+            const emaiRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+            return inputString.match(emaiRegex) || [];
+        }
+        console.log(extractEmail("Contactez-nous à sos@exemple.com ou portfolio@site.com"));
+
     </script>
 </body>
 </html>

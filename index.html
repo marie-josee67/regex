@@ -87,7 +87,11 @@
 
         // exo7 perso pas encore la correction
         //REGEX 7 : Extraire toutes les adresses e-mail présentes dans une chaîne de caractères. (utiliser la fonction « match »)
-        //console.log(extractEmails("Contactez-nous à contact@exemple.com ou info@site.com")); // ['contact@exemple.com', 'info@site.com']
+        const extratRegex = /\w+@+\w+(?!@)+\w.{4}/g;
+        //const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,6}$/;
+
+        const extractEmails = (text) => text.match(extratRegex) || [];
+        console.log(extractEmails("Contactez-nous à contact@exemple.com ou info@site.com")); // ['contact@exemple.com', 'info@site.com']
 
     </script>
 </body>
